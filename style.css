@@ -337,18 +337,14 @@ header {
     text-align: center;
 }
 
-.projects-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
 .project-container {
     background: #333;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
     transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-container:hover {
@@ -358,6 +354,7 @@ header {
 .project-details {
     padding: 1.5rem;
     text-align: left;
+    flex: 1;
 }
 
 .project-details h3 {
@@ -389,17 +386,19 @@ header {
     color: #fff;
 }
 
-.project-preview {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
+/* Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 1rem; /* Space between grid items */
+    padding: 1rem; /* Padding within the grid container */
 }
 
-.project-preview iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    display: block;
+.project-grid img {
+    width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 /* Education Section */
@@ -552,8 +551,8 @@ header {
     }
 
     /* Projects Section */
-    .projects-wrapper {
-        grid-template-columns: 1fr;
+    .project-grid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
     }
 
     .project-container {
@@ -565,11 +564,10 @@ header {
         text-align: center;
         padding: 1.5rem;
     }
-
-    .project-preview {
-        height: 250px;
-    }
-
+    /*No need for a fixed height anymore, remove this*/
+    /*.project-image {
+        height: 200px; /* Adjust the height as needed */
+    }*/
     /* Experience & Education sections */
     .experience,
     .education {
@@ -585,4 +583,72 @@ header {
     .education-item {
         padding: 1rem;
     }
+/* Contact Section */
+.contact-section {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #222;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background: #333;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: #9370DB;  /* Purple focus color */
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;  /* Allow vertical resizing */
+}
+
+.contact-section button {
+    background-color: #63d84e;
+    color: #fff;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 0 auto; /* Center the button */
+}
+
+.contact-section button:hover {
+    background-color: #52ba3a;
 }

@@ -26,11 +26,12 @@
             <a href="#projects">Projects</a>
             <a href="#experience">Experience</a>
             <a href="#education">Education</a>
+            <a href="#contact">Contact Me</a>
             <a href="uploads/Khanyisile_CV2.pdf" download class="download-btn">Download CV</a>
         </nav>
     </header>
 
-    <section class="about-section">
+    <section class="about-section" id="about">
         <div class="about-container">
             <div class="img-container">
                 <img src="uploads/img5-removebg-preview.png" alt="K.M">
@@ -56,8 +57,7 @@
                 <li>Created and edited digital content, enhancing brand presence.</li>
                 <li>Provided IT support and optimized technical troubleshooting.</li>
             </ul>
-        </div>
-        <div class="job">
+
             <h3>Customer Service & Food Service</h3>
             <p><strong>Ribs Circle | Tembisa</strong> (January 2017 – April 2023)</p>
             <ul>
@@ -65,6 +65,7 @@
                 <li>Improved workflows to boost productivity.</li>
                 <li>Developed teamwork and multitasking skills in a fast-paced setting.</li>
             </ul>
+
         </div>
     </section>
 
@@ -90,19 +91,20 @@
 
     <section class="projects-section" id="projects">
         <h2>Projects</h2>
-        <div class="projects-wrapper">
-            <div class="project-container">
-                <div class="project-details">
-                    <h3>Ribs Circle</h3>
-                    <p>Short description of the project highlighting key features and functionality.</p>
-                    <a href="http://localhost/PreviewRibsCircle/" target="_blank" class="visit-site">Visit Site</a>
-                    <a href="https://github.com/khanyimazibuko/RibsCircle_System_Main" target="_blank">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
-                <div class="project-preview">
-                    <iframe src="http://localhost/PreviewRibsCircle/" width="100%" height="400px" style="border: none; overflow: auto;"></iframe>
-                </div>
+        <div class="project-container">
+            <div class="project-details">
+                <h3>Ribs Circle</h3>
+                <p>Short description of the project highlighting key features and functionality.</p>
+                <a href="http://localhost/PreviewRibsCircle/" target="_blank" class="visit-site">Visit Site</a>
+                <a href="https://github.com/khanyimazibuko/RibsCircle_System_Main" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <div class="project-grid">
+                <img src="uploads/img6.png" alt="Project Image 1">
+                <img src="uploads/img7.png" alt="Project Image 2">
+                <img src="uploads/img8.png" alt="Project Image 3">
+                <img src="uploads/img7.png" alt="Project Image 4">
             </div>
         </div>
     </section>
@@ -115,29 +117,46 @@
             <ul>
                 <li>Gained expertise in Internet Programming, enhancing skills in the software development industry.</li>
             </ul>
-        </div>
-        <div class="education-item">
+
             <h3>Richfield Graduate Institute of Technology</h3>
             <p><strong>April 2024:</strong> Entrepreneurship Hub Website Design Certificate</p>
             <ul>
                 <li>Expanded entrepreneurial skills while designing a website for an upcoming business venture.</li>
             </ul>
-        </div>
-        <div class="education-item">
+
             <h3>Richfield Graduate Institute of Technology</h3>
             <p><strong>2021:</strong> Higher Certificate in Information Technology</p>
             <ul>
                 <li>Improved proficiency in various computer-related skills and software applications.</li>
             </ul>
-        </div>
-        <div class="education-item">
+
             <h3>Graceland Education Centre</h3>
             <p><strong>2019:</strong> Grade 12</p>
             <ul>
                 <li>Achieved a Matric certificate.</li>
             </ul>
-        </div>
     </section>
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm" action="#" method="POST">  <!--  Action is set up later, and method can be POST -->
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+            <p id="formStatus" style="color: #63d84e; margin-top: 10px;"></p>  <!-- Feedback to the user -->
+        </form>
+    </section>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -147,8 +166,43 @@
             menuToggle.addEventListener('click', function() {
                 mainNav.classList.toggle('active');
                 //Also toggle the social links on mobile
-                 const socialLinks = document.querySelector('.social-links');
+                const socialLinks = document.querySelector('.social-links');
                 socialLinks.classList.toggle('active');
+            });
+
+             // Contact Form Submission
+            const contactForm = document.getElementById('contactForm');
+            const formStatus = document.getElementById('formStatus');
+
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission (page refresh)
+
+                const formData = new FormData(this); // Collect form data
+
+                // Option 1:  Using a Service like Formspree (Recommended for simplicity)
+                fetch('https://formspree.io/f/{YOUR_FORMSPREE_ID}', { // Replace with your Formspree endpoint
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json' // Important for Formspree
+                    }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        formStatus.textContent = 'Message sent successfully!';
+                        contactForm.reset(); // Clear the form
+                    } else {
+                        // Show error message (Formspree will often provide details)
+                        response.json().then(data => {
+                            formStatus.textContent = 'Error sending message: ' + (data.error || 'Unknown error');
+                        });
+
+                    }
+                })
+                .catch(error => {
+                    formStatus.textContent = 'Error sending message: ' + error.message; // Generic error
+                    console.error('Fetch error:', error);
+                });
             });
         });
     </script>
