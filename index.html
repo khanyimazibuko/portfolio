@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,27 +8,26 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     <header>
-        <div class="logo-container">
+        <nav class="main-nav">
             <a href="#" class="km-initials">K.M</a>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-links">
+                <a href="#about">About Me</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="uploads/Khanyisile_CV2.pdf" download class="download-btn" id="download-cv">Download CV</a>
+            </div>
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/khanyisile-mazibuko-km1229/" target="_blank"><i class="fab fa-linkedin"></i></a>
                 <a href="mailto:khanyisilemoticoe@gmail.com"><i class="fas fa-envelope"></i></a>
                 <a href="https://github.com/khanyimazibuko" target="_blank"><i class="fab fa-github"></i></a>
             </div>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-        <nav class="main-nav">
-            <a href="#about">About Me</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#experience">Experience</a>
-            <a href="#education">Education</a>
-            <a href="#contact">Contact Me</a>
-            <a href="uploads/Khanyisile_CV2.pdf" download class="download-btn">Download CV</a>
         </nav>
     </header>
 
@@ -37,15 +37,15 @@
                 <img src="uploads/img5-removebg-preview.png" alt="K.M">
             </div>
             <div class="about-text">
-                <h1>Software Developer Enthusiast <br> Entrepreneur</h1>
-                <p>I am a self-motivated software developer with a structured, <br>
-                    efficient approach and a passion for innovation. Thriving in <br>
-                    fast-paced environments, I combine technical expertise with <br>
-                    entrepreneurial skills to deliver creative solutions and drive <br>
-                    continuous growth.</p>
+                <h1>Software Developer | UI/UX Designer</h1>
+                <p>I’m a passionate software developer who thrives on creativity and problem-solving. 
+                    I love turning ideas into functional, user-friendly solutions using technologies like Java, C#, PHP, 
+                    MySQL, HTML, CSS, and JavaScript.</p>
             </div>
         </div>
     </section>
+
+    <div class="divider"></div>
 
     <section class="experience" id="experience">
         <h2>Work Experience</h2>
@@ -57,44 +57,35 @@
                 <li>Created and edited digital content, enhancing brand presence.</li>
                 <li>Provided IT support and optimized technical troubleshooting.</li>
             </ul>
-
-            <h3>Customer Service & Food Service</h3>
-            <p><strong>Ribs Circle | Tembisa</strong> (January 2017 – April 2023)</p>
-            <ul>
-                <li>Handled customer inquiries and transactions with efficiency.</li>
-                <li>Improved workflows to boost productivity.</li>
-                <li>Developed teamwork and multitasking skills in a fast-paced setting.</li>
-            </ul>
-
         </div>
     </section>
+
+    <div class="divider"></div>
 
     <section class="skills-section" id="skills">
         <h2>My Skills</h2>
         <div class="skills-wrapper">
-            <div class="skills-container">
-                <div class="skill"><i class="fab fa-figma"></i> Figma Designing</div>
-                <div class="skill"><i class="fas fa-database"></i> MySQL Database</div>
-                <div class="skill"><i class="fab fa-php"></i> PHP</div>
-                <div class="skill"><i class="fas fa-file-word"></i> MS Word</div>
-                <div class="skill"><i class="fas fa-laptop"></i> MS Office</div>
-                <div class="skill"><i class="fas fa-table"></i> Excel</div>
-            </div>
-            <div class="skills-container reverse">
-                <div class="skill"><i class="fab fa-html5"></i> HTML & CSS</div>
-                <div class="skill"><i class="fas fa-code"></i> C#</div>
-                <div class="skill"><i class="fas fa-code"></i> C++</div>
-                <div class="skill"><i class="fab fa-java"></i> Java</div>
-            </div>
+            <ul class="skills-list">
+                <li class="skill"><i class="fab fa-figma"></i> UI/UX Design</li>
+                <li class="skill"><i class="fas fa-database"></i> MySQL</li>
+                <li class="skill"><i class="fab fa-php"></i> PHP</li>
+                <li class="skill"><i class="fa-brands fa-js"></i> JavaScript</li>
+                <li class="skill"><i class="fab fa-html5"></i> HTML & CSS</li>
+                <li class="skill"><i class="fas fa-sharp"></i> C#</li>
+                <li class="skill"><i class="fab fa-java"></i> Java</li>
+            </ul>
         </div>
     </section>
+
+    <div class="divider"></div>
 
     <section class="projects-section" id="projects">
         <h2>Projects</h2>
         <div class="project-container">
             <div class="project-details">
                 <h3>Ribs Circle</h3>
-                <p>Short description of the project highlighting key features and functionality.</p>
+                <p>Developed an e-commerce platform for Ribs Circle, enabling seamless online ordering. 
+                    Built using PHP, MySQL, HTML, CSS, and JavaScript to provide a user-friendly and efficient shopping experience.</p>
                 <a href="http://localhost/PreviewRibsCircle/" target="_blank" class="visit-site">Visit Site</a>
                 <a href="https://github.com/khanyimazibuko/RibsCircle_System_Main" target="_blank">
                     <i class="fab fa-github"></i>
@@ -106,105 +97,57 @@
                 <img src="uploads/img8.png" alt="Project Image 3">
                 <img src="uploads/img7.png" alt="Project Image 4">
             </div>
+            <div class="project-details">
+                <h3>Car System</h3>
+                <p>Coming soon!</p>
+                <a href="http://localhost/PreviewRibsCircle/" target="_blank" class="visit-site">Visit Site</a>
+                <a href="https://github.com/khanyimazibuko/RibsCircle_System_Main" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
         </div>
     </section>
 
-    <section class="education" id="education">
-        <h2>Education</h2>
-        <div class="education-item">
-            <h3>Richfield Graduate Institute of Technology</h3>
-            <p><strong>2024:</strong> Bachelor of Science in Information Technology</p>
-            <ul>
-                <li>Gained expertise in Internet Programming, enhancing skills in the software development industry.</li>
-            </ul>
-
-            <h3>Richfield Graduate Institute of Technology</h3>
-            <p><strong>April 2024:</strong> Entrepreneurship Hub Website Design Certificate</p>
-            <ul>
-                <li>Expanded entrepreneurial skills while designing a website for an upcoming business venture.</li>
-            </ul>
-
-            <h3>Richfield Graduate Institute of Technology</h3>
-            <p><strong>2021:</strong> Higher Certificate in Information Technology</p>
-            <ul>
-                <li>Improved proficiency in various computer-related skills and software applications.</li>
-            </ul>
-
-            <h3>Graceland Education Centre</h3>
-            <p><strong>2019:</strong> Grade 12</p>
-            <ul>
-                <li>Achieved a Matric certificate.</li>
-            </ul>
-    </section>
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <h2>Contact Me</h2>
-        <form id="contactForm" action="#" method="POST">  <!--  Action is set up later, and method can be POST -->
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <button type="submit">Send Message</button>
-            <p id="formStatus" style="color: #63d84e; margin-top: 10px;"></p>  <!-- Feedback to the user -->
-        </form>
-    </section>
-
-
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const menuToggle = document.querySelector('.menu-toggle');
             const mainNav = document.querySelector('.main-nav');
+            const downloadBtn = document.getElementById('download-cv');
 
-            menuToggle.addEventListener('click', function() {
+            // Event listener to toggle menu on mobile
+            menuToggle.addEventListener('click', function () {
                 mainNav.classList.toggle('active');
-                //Also toggle the social links on mobile
-                const socialLinks = document.querySelector('.social-links');
-                socialLinks.classList.toggle('active');
             });
 
-             // Contact Form Submission
-            const contactForm = document.getElementById('contactForm');
-            const formStatus = document.getElementById('formStatus');
+            // Smooth scrolling for navigation links
+            const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    const offsetPosition = targetElement.getBoundingClientRect().top + window.scrollY - 50;
 
-            contactForm.addEventListener('submit', function(event) {
-                event.preventDefault(); // Prevent default form submission (page refresh)
-
-                const formData = new FormData(this); // Collect form data
-
-                // Option 1:  Using a Service like Formspree (Recommended for simplicity)
-                fetch('https://formspree.io/f/{YOUR_FORMSPREE_ID}', { // Replace with your Formspree endpoint
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json' // Important for Formspree
-                    }
-                })
-                .then(response => {
-                    if (response.ok) {
-                        formStatus.textContent = 'Message sent successfully!';
-                        contactForm.reset(); // Clear the form
-                    } else {
-                        // Show error message (Formspree will often provide details)
-                        response.json().then(data => {
-                            formStatus.textContent = 'Error sending message: ' + (data.error || 'Unknown error');
-                        });
-
-                    }
-                })
-                .catch(error => {
-                    formStatus.textContent = 'Error sending message: ' + error.message; // Generic error
-                    console.error('Fetch error:', error);
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
                 });
+            });
+
+            // Download CV button click effect
+            downloadBtn.addEventListener('click', function () {
+                this.classList.add('downloading');
+                setTimeout(() => {
+                    this.classList.remove('downloading');
+                }, 2000); // Reset after 2 seconds
             });
         });
     </script>
 </body>
+
+<footer>
+    <p>© 2025 Khanyisile Mazibuko. All rights reserved.</p>
+</footer>
+
 </html>
